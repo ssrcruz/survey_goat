@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/log_in'
+
+  get 'sessions/log_out'
+
   resources :surveys
   root 'surveys#index'
   # The priority is based upon order of creation: first created -> highest priority.
