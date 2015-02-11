@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   get 'sessions/log_in'
-
+  post 'sessions/log_in'
   get 'sessions/log_out'
 
   resources :surveys
-  root 'surveys#index'
+  root 'sessions#log_in'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
