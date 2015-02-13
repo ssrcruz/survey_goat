@@ -79,6 +79,6 @@ class SurveysController < ApplicationController
     end
 
     def build_questions
-      @survey.questions.build
+      2.times {@survey.questions.build}
     end
 end
