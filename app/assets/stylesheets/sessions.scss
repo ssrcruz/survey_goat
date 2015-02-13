@@ -14,13 +14,14 @@
   padding: 150px;
 }
 
-input, .button, .sign-up-link {
+input {
+  outline: none;
+  font-family: courier;
+  padding: 10px 5px 10px 5px;
+}
+
+.button, .sign-up-link {
   outline: none;
   font-family: courier;
   padding: 10px 0 10px 0;
-}
-
-.login-header {
-  font-size: 5em;
-  padding-bottom: 1em;
 }

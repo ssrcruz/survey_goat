@@ -16,7 +16,13 @@
 
 @import 'scaffolds';
 @import 'sessions';
+@import 'authors';
 
 body {
   font-family: courier;
+}
+
+.main-header {
+  font-size: 5em;
+  padding-bottom: 1em;
 }
