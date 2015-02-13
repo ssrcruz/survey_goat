@@ -17,10 +17,12 @@ class SurveysController < ApplicationController
   # GET /surveys/new
   def new
     @survey = Survey.new
+    build_questions
   end
 
   # GET /surveys/1/edit
   def edit
+    build_questions
   end
 
   # POST /surveys
@@ -57,10 +59,11 @@ class SurveysController < ApplicationController
   # DELETE /surveys/1.json
   def destroy
     @survey.destroy
-    respond_to do |format|
-      format.html { redirect_to surveys_url, notice: 'Survey was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to surveys_path notice: 'Survey was successfully deleted.'
+    # respond_to do |format|
+    #   format.html { redirect_to surveys_url, notice: 'Survey was successfully destroyed.' }
+    #   format.json { head :no_content }
+    # end
   end
 
   private
@@ -71,6 +74,11 @@ class SurveysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
-      params.require(:survey).permit(:title, :description, :author_id)
+      params.require(:survey).permit(:title, :description, :author_id,
+      questions_attributes: [:id, :question_text, :description, :_destroy])
+    end
+
+    def build_questions
+      @survey.questions.build
     end
 end
