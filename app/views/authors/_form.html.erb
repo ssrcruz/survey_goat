@@ -1,4 +1,8 @@
-<h1>Sign Up</h1>
+<div class="sign-up-body">
+  
+  <header class="main-header">Survey Goat</header>
+
+  <h1>Sign Up</h1>
 
 <%= form_for @author do |f| %>
   <% if @author.errors.any? %>
@@ -11,21 +15,22 @@
       </ul>
     </div>
   <% end %>
-  <p>
+  <div class="new-user__name">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </p>
-  <p>
+  </div>
+  <div class="new-user__email">
     <%= f.label :email %><br />
     <%= f.text_field :email %>
-  </p>
-  <p>
+  </div>
+  <div class="new-user__pword">
     <%= f.label :password %><br />
     <%= f.password_field :password %>
-  </p>
-  <p>
+  </div>
+  <div class="new user__pword">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
-  </p>
-  <p class="button"><%= f.submit %></p>
+  </div>
+  <div class="button"><%= f.submit %></div>
 <% end %>
+</div>
