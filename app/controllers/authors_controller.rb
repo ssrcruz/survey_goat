@@ -18,7 +18,7 @@ class AuthorsController < ApplicationController
     if @author.save
       redirect_to sessions_log_in_path, notice: "Registered!"
     else
-      render "log_in"
+      redirect_to sign_up_path, notice: "All fields are required."
     end
   end
 
