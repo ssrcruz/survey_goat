@@ -1,5 +1,5 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_survey, only: [:show, :edit, :update, :destroy, :survey_response]
   before_action :logged_in?
 
   # GET /surveys
@@ -12,6 +12,9 @@ class SurveysController < ApplicationController
   # GET /surveys/1
   # GET /surveys/1.json
   def show
+  end
+
+  def survey_response
   end
 
   # GET /surveys/new
@@ -75,7 +78,7 @@ class SurveysController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
       params.require(:survey).permit(:title, :description, :author_id,
-      questions_attributes: [:id, :question_text, :description, :_destroy])
+          questions_attributes: [:id, :question_text, :description, :_destroy])
     end
 
     def build_questions
