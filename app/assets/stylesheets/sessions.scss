@@ -1,3 +1,26 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// * {
+//   border: 1px dashed black;
+//   padding: 10px;
+//   margin: 10px;
+//   font-family: courier;
+// }
+.login-body {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 150px;
+}
+
+input, .button, .sign-up-link {
+  outline: none;
+  font-family: courier;
+  padding: 10px 0 10px 0;
+}
+
+.login-header {
+  font-size: 5em;
+  padding-bottom: 1em;
+}

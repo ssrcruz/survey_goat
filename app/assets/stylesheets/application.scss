@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'scaffolds';
+@import 'sessions';
+
+body {
+  font-family: courier;
+}
