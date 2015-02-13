@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @survey.title %>
@@ -11,6 +9,9 @@
 </p>
 
 
+
+<p>Copy and paste this link:
+  https://surveygoat.herokuapp.com<%= new_submission_path(survey_id: @survey.id) %></p>
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>

@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Listing Surveys</h1>
 
@@ -19,6 +19,7 @@
         <td><%= link_to 'Show', survey %></td>
         <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
         <td><%= button_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Submission Form', new_submission_path(survey_id: survey.id) %></td>
       </tr>
     <% end %>
   </tbody>

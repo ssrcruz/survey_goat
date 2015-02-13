@@ -17,7 +17,7 @@
   <%= f.fields_for :responses do |ff| %>
     <%= ff.hidden_field :question_id %>
     <p>
-      <%= ff.object.question.question_text %> :
+      <%= ff.object.question.question_text %>
       <%= ff.object.question.description %>
       <%= ff.text_field :response_text %>
     </p>
