@@ -14,10 +14,6 @@ class SurveysController < ApplicationController
   def show
   end
 
-  def survey_response
-    @questions = @survey.questions
-  end
-
   # GET /surveys/new
   def new
     @survey = Survey.new
