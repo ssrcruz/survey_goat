@@ -9,9 +9,13 @@
 </p>
 
 
-
 <p>Copy and paste this link:
   https://surveygoat.herokuapp.com<%= new_submission_path(survey_id: @survey.id) %></p>
+
+<% @survey.questions.each do |q| %>
+  <h3>Question: <%= q.question_text %></h3>
+  <p>Description: <%= q.description %></p>
+<% end  %><br>
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>
