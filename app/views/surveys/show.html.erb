@@ -15,7 +15,13 @@
 <% @survey.questions.each do |q| %>
   <h3>Question: <%= q.question_text %></h3>
   <p>Description: <%= q.description %></p>
+  <% q.responses.each do |r| %>
+    <p><%= r.response_text %></p>
+  <% end  %><br>
+
 <% end  %><br>
+
+
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>
