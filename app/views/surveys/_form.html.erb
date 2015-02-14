@@ -27,7 +27,7 @@
 
   <%= f.fields_for :questions do |ff| %>
     <p>Question Type: <%= ff.select :question_type, ["Yes/No", "Short Answer",
-          "Long Answer", "Choice"]  %></p>
+          "Long Answer", "Choice"], :include_blank => true  %></p>
     <p>Question: <%= ff.text_field :question_text %></p>
     <p>Question Description: <%= ff.text_area :description %></p>
     <%= ff.fields_for :options do |fff| %>
