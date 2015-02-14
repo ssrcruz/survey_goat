@@ -26,9 +26,13 @@
   <h3>Questions</h3>
 
   <%= f.fields_for :questions do |ff| %>
+    <p>Question Type: <%= ff.select :question_type, ["Yes/No", "Short Answer",
+          "Long Answer", "Choice"]  %></p>
     <p>Question: <%= ff.text_field :question_text %></p>
     <p>Question Description: <%= ff.text_area :description %></p>
-    <p>Question Type: <%= ff.select :question_type, ["Yes/No", "Short Answer", "Long Answer", "Choice"]  %></p>
+    <%= ff.fields_for :options do |fff| %>
+      <p>Question Option: <%= fff.text_field :option_text %></p>
+    <% end %>
   <% end %>
 
 
