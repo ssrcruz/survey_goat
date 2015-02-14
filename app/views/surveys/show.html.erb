@@ -17,5 +17,9 @@
   <p>Description: <%= q.description %></p>
 <% end  %><br>
 
+<% @survey.responses.each do |r| %>
+<%= r.response_text %>
+<% end  %><br>
+
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>
