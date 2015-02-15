@@ -10,4 +10,14 @@ class Survey < ActiveRecord::Base
        :allow_destroy => true,
        :reject_if     => proc { |a| a['question_text'].blank? &&
          a['question_type'].blank? && a['description'].blank? }
+
+  def complete?
+    if questions.blank?
+      false
+    elsif questions.each { |q| q.question_type == 'Choice' && q.options.count < 2 }
+      false
+    else
+      true
+    end
+  end
 end
