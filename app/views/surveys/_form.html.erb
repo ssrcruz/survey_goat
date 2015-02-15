@@ -1,4 +1,4 @@
-<%= form_for(@survey) do |f| %>
+<%= form_for(@survey, remote: true) do |f| %>
   <% if @survey.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
@@ -24,7 +24,6 @@
   </div>
 
   <h3>Questions</h3>
-
   <%= f.fields_for :questions do |ff| %>
     <p>Question Type: <%= ff.select :question_type, ["Yes/No", "Short Answer",
           "Long Answer", "Choice"], :include_blank => true  %></p>
@@ -35,7 +34,20 @@
       <p>Question Option: <%= fff.text_field :option_text %></p>
     <% end %>
   <% end %>
-
+  <div class="questionSite"></div>
+<button type="button" class="addQuestion">+ Question</button>
+<template id="newQuestion">
+    <%= f.fields_for Question.new do |ff| %>
+    <p>Question Type: <%= ff.select :question_type, ["Yes/No", "Short Answer",
+          "Long Answer", "Choice"], :include_blank => true  %></p>
+          <p>Required question? <%= ff.check_box :is_required %></p>
+    <p>Question: <%= ff.text_field :question_text %></p>
+    <p>Question Description: <%= ff.text_area :description %></p>
+    <%= ff.fields_for :options do |fff| %>
+      <p>Question Option: <%= fff.text_field :option_text %></p>
+    <% end %>
+  <% end %>
+</template>
 
   <div class="actions">
     <%= f.submit %>

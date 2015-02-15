@@ -23,5 +23,5 @@
 
 
 <%= link_to 'Submission Form', new_submission_path(survey_id: @survey.id) %>
-<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Edit', edit_survey_path(@survey), remote: true %> |
 <%= link_to 'Back', surveys_path %>

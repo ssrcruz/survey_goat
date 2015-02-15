@@ -6,7 +6,7 @@ class SurveysController < ApplicationController
   # GET /surveys.json
   def index
     @author = Author.find_by_id(session[:author_id])
-    @surveys = @author.surveys
+    @surveys = @author.surveys.order("created_at desc")
   end
 
   # GET /surveys/1
@@ -32,10 +32,14 @@ class SurveysController < ApplicationController
 
     respond_to do |format|
       if @survey.save
-        format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
+        format.html {
+          flash[:new]= true
+          redirect_to @survey
+
+        }
         format.json { render :show, status: :created, location: @survey }
       else
-        format.html { render :new }
+        format.js { render :new }
         format.json { render json: @survey.errors, status: :unprocessable_entity }
       end
     end

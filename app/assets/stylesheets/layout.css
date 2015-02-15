@@ -4,7 +4,6 @@
  */
 body {
     color: #333;
-    font-family: courier;
 }
 
 
@@ -41,7 +40,7 @@ a {
 
 /*
  * -- LAYOUT STYLES --
- * This layout consists of three main elements, `#nav` (navigation bar), `#list` (email list), and `#main` (email content). All 3 elements are within `#layout`
+ * This layout consists of three main elements, `#nav` (navigation bar), `#list` (survey list), and `#main` (survey content). All 3 elements are within `#layout`
  */
 #layout, #nav, #list, #main {
     margin: 0;
@@ -53,12 +52,8 @@ a {
     width: 100%;
     height: 40px;
     position: relative;
-    background: white;
-    box-sizing: border-box;
-    border-right: solid 1px;
-    /*rgb(0, 0, 0);*/
+    background: rgb(37, 42, 58);
     text-align: center;
-    font-family: courier;
 }
 /* Show the "Menu" button on phones */
 #nav .nav-menu-button {
@@ -92,67 +87,51 @@ a {
     background: transparent;
     border: none;
     text-align: left;
-
 }
     #nav .pure-menu a:hover,
     #nav .pure-menu a:focus {
-        background: whitesmoke;
-        /*rgb(55, 60, 90);*/
+        background: rgb(55, 60, 90);
     }
     #nav .pure-menu a {
-        color: black;
+        color: #fff;
         margin-left: 0.5em;
-        font-family: courier;
     }
     #nav .pure-menu-heading {
         border-bottom: none;
         font-size:110%;
         color: rgb(75, 113, 151);
-        font-family: courier;
     }
 
 
 /*
- * -- EMAIL STYLES --
- * Styles relevant to the email messages, labels, counts, and more.
+ * -- survey STYLES --
+ * Styles relevant to the survey messages, labels, counts, and more.
  */
 .survey-count {
     color: rgb(75, 113, 151);
 }
 
-.unique-login {
-  color: darkgreen;
-  text-align: center;
-  font-weight: bold;
-  font-family: courier;
-  font-variant: small-caps;
-  font-size: 125%
-}
-
-.user-label-dontuse,
-.user-label-profile,
-.user-label-logout {
+.survey-label-personal,
+.survey-label-work,
+.survey-label-travel {
     width: 15px;
     height: 15px;
     display: inline-block;
     margin-right: 0.5em;
     border-radius: 3px;
 }
-.user-label-dontuse {
-    background: darkgreen;
-    /*#ffc94c;*/
+.survey-label-personal {
+    background: #ffc94c;
 }
-.user-label-profile {
-    background: darkgreen;
-    /*#41ccb4;*/
+.survey-label-work {
+    background: #41ccb4;
 }
-.user-label-logout {
-    background: darkgreen;
-    /*#40c365;*/
+.survey-label-travel {
+    background: #40c365;
 }
 
 
-/* Email Item Styles */
+/* survey Item Styles */
 .survey-item {
     padding: 0.9em 1em;
     border-bottom: 1px solid #ddd;
@@ -182,7 +161,7 @@ a {
     border-left: 6px solid #1b98f8;
 }
 
-/* Survey Content Styles */
+/* survey Content Styles */
 .survey-content-header, .survey-content-body, .survey-content-footer {
     padding: 1em 2em;
 }
@@ -226,7 +205,6 @@ a {
     #layout {
         padding-left:500px; /* "left col (nav + list)" width */
         position: relative;
-        font-family: courier;
     }
 
     /* These are position:fixed; elements that will be in the left 500px of the screen */
