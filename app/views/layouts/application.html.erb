@@ -8,11 +8,16 @@
   <%= javascript_include_tag 'application' %>
 </head>
 <body>
+
   <p id="notice"><%= notice %></p>
   <div id="user_nav" class="nav-inner">
     <% if current_user %>
-      Logged in as <%= current_user.name %>.
-      <%= button_to "Log out", sessions_log_out_path, :method => "get" %>
+      <div class="userID">
+        Logged in as <%= current_user.name %>.
+      </div>
+      <div class="logout">
+        <%= button_to "Log out", sessions_log_out_path, :method => "get" %>
+      </div>
     <% end %>
   </div>
 

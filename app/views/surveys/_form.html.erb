@@ -36,6 +36,7 @@
   <% end %>
   <div class="questionSite"></div>
 <button type="button" class="addQuestion">+ Question</button>
+
 <template id="newQuestion">
     <%= f.fields_for Question.new do |ff| %>
     <p>Question Type: <%= ff.select :question_type, ["Yes/No", "Short Answer",
