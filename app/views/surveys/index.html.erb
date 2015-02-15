@@ -5,21 +5,19 @@
         <a href="#" class="nav-menu-button">Menu</a>
 
         <div class="nav-inner">
-            <button class="primary-button pure-button"><%= link_to 'New Survey', new_survey_path %></button>
+          Logged in as<div class="unique-login"><%= current_user.name %></div>
+          <p></p>
+          <div class="pure-menu-heading"></div>
+          <button class="primary-button pure-button"><%= link_to 'New Survey', new_survey_path %></button>
 
-            <div class="pure-menu pure-menu-open">
-                <ul>
-                    <li><a href="#">Inbox <span class="survey-count">(2)</span></a></li>
-                    <li><a href="#">Important</a></li>
-                    <li><a href="#">Sent</a></li>
-                    <li><a href="#">Drafts</a></li>
-                    <li><a href="#">Trash</a></li>
-                    <li class="pure-menu-heading">Labels</li>
-                    <li><a href="#"><span class="survey-label-personal"></span>Personal</a></li>
-                    <li><a href="#"><span class="survey-label-work"></span>Work</a></li>
-                    <li><a href="#"><span class="survey-label-travel"></span>Travel</a></li>
-                </ul>
-            </div>
+          <div class="pure-menu pure-menu-open">
+            <ul>
+              <li class="pure-menu-heading"></li>
+              <li><a href="#"><span class="user-label-profile"></span>Settings</a></li>
+              <li><a href="#"><span class="user-label-logout"></span>Log out</a></li>
+            </ul>
+          </div>
+          <img src="">
         </div>
     </div>
 
