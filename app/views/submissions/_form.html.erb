@@ -18,7 +18,9 @@
     <%= ff.hidden_field :question_id %>
     <p>
       <%= ff.object.question.question_text %>
-      <%= ff.object.question.description %><br>
+      <%= ff.object.question.description %>
+      <%= ff.object.question.question_type %>
+      <br>
       <% ff.object.question.options.each do |o| %>
         <%= ff.label :response_text, o.option_text %>
         <%= ff.radio_button :response_text,  :value => o.option_text %>
