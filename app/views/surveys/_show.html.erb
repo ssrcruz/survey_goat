@@ -1,5 +1,16 @@
 <div class="wrapper">
 <header>
+
+  <div class="headerbuttons">
+  <button class="pure-button" id="show">
+    <span> Submission Form </span>
+    <%= link_to 'Submission Form', new_submission_path(survey_id: @survey.id) %>
+  </button>
+  <button class="pure-button" id="show">
+    <span> Edit </span>
+  <%= link_to 'Edit', edit_survey_path(@survey), remote: true %>
+  </button>
+
 <h1>
   <%= @survey.title %>
 </h1>
@@ -32,9 +43,4 @@
   <% end  %><br>
 
 <% end  %><br>
-</div>
-
-<%= link_to 'Submission Form', new_submission_path(survey_id: @survey.id) %>
-<%= link_to 'Edit', edit_survey_path(@survey), remote: true %> |
-<%= link_to 'Back', surveys_path %>
 </div>
