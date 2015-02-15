@@ -4,6 +4,7 @@
  */
 body {
     color: #333;
+    font-family: courier;
 }
 
 
@@ -52,8 +53,12 @@ a {
     width: 100%;
     height: 40px;
     position: relative;
-    background: rgb(37, 42, 58);
+    background: white;
+    box-sizing: border-box;
+    border-right: solid 1px;
+    /*rgb(0, 0, 0);*/
     text-align: center;
+    font-family: courier;
 }
 /* Show the "Menu" button on phones */
 #nav .nav-menu-button {
@@ -87,19 +92,23 @@ a {
     background: transparent;
     border: none;
     text-align: left;
+
 }
     #nav .pure-menu a:hover,
     #nav .pure-menu a:focus {
-        background: rgb(55, 60, 90);
+        background: whitesmoke;
+        /*rgb(55, 60, 90);*/
     }
     #nav .pure-menu a {
-        color: #fff;
+        color: black;
         margin-left: 0.5em;
+        font-family: courier;
     }
     #nav .pure-menu-heading {
         border-bottom: none;
         font-size:110%;
         color: rgb(75, 113, 151);
+        font-family: courier;
     }
 
 
@@ -107,88 +116,100 @@ a {
  * -- EMAIL STYLES --
  * Styles relevant to the email messages, labels, counts, and more.
  */
-.email-count {
+.survey-count {
     color: rgb(75, 113, 151);
 }
 
-.email-label-personal,
-.email-label-work,
-.email-label-travel {
+.unique-login {
+  color: darkgreen;
+  text-align: center;
+  font-weight: bold;
+  font-family: courier;
+  font-variant: small-caps;
+  font-size: 125%
+}
+
+.user-label-dontuse,
+.user-label-profile,
+.user-label-logout {
     width: 15px;
     height: 15px;
     display: inline-block;
     margin-right: 0.5em;
     border-radius: 3px;
 }
-.email-label-personal {
-    background: #ffc94c;
+.user-label-dontuse {
+    background: darkgreen;
+    /*#ffc94c;*/
 }
-.email-label-work {
-    background: #41ccb4;
+.user-label-profile {
+    background: darkgreen;
+    /*#41ccb4;*/
 }
-.email-label-travel {
-    background: #40c365;
+.user-label-logout {
+    background: darkgreen;
+    /*#40c365;*/
 }
 
 
 /* Email Item Styles */
-.email-item {
+.survey-item {
     padding: 0.9em 1em;
     border-bottom: 1px solid #ddd;
     border-left: 6px solid transparent;
 }
-    .email-avatar {
+    .survey-avatar {
         border-radius: 3px;
         margin-right: 0.5em;
     }
-    .email-name,
-    .email-subject {
+    .survey-name,
+    .survey-subject {
         margin: 0;
     }
-    .email-name {
+    .survey-name {
         text-transform: uppercase;
         color: #999;
     }
-    .email-desc {
+    .survey-desc {
         font-size: 80%;
         margin: 0.4em 0;
     }
 
-.email-item-selected {
+.survey-item-selected {
     background: #eee;
 }
-.email-item-unread {
+.survey-item-unread {
     border-left: 6px solid #1b98f8;
 }
 
-/* Email Content Styles */
-.email-content-header, .email-content-body, .email-content-footer {
+/* Survey Content Styles */
+.survey-content-header, .survey-content-body, .survey-content-footer {
     padding: 1em 2em;
 }
-    .email-content-header {
+    .survey-content-header {
         border-bottom: 1px solid #ddd;
     }
 
-        .email-content-title {
+        .survey-content-title {
             margin: 0.5em 0 0;
         }
-        .email-content-subtitle {
+        .survey-content-subtitle {
             font-size: 1em;
             margin: 0;
             font-weight: normal;
         }
-            .email-content-subtitle span {
+            .survey-content-subtitle span {
                 color: #999;
             }
-    .email-content-controls {
+    .survey-content-controls {
         margin-top: 2em;
         text-align: right;
     }
-        .email-content-controls .secondary-button {
+        .survey-content-controls .secondary-button {
             margin-bottom: 0.3em;
         }
 
-    .email-avatar {
+    .survey-avatar {
         width: 40px;
         height: 40px;
     }
@@ -205,6 +226,7 @@ a {
     #layout {
         padding-left:500px; /* "left col (nav + list)" width */
         position: relative;
+        font-family: courier;
     }
 
     /* These are position:fixed; elements that will be in the left 500px of the screen */
@@ -272,4 +294,3 @@ a {
         padding: 0;
     }
 }
-
