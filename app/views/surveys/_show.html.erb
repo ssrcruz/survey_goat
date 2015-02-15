@@ -28,11 +28,11 @@
   <p>Description: <%= q.description %></p>
   <% q.responses.each do |r| %>
     <p><%= r.response_text %></p>
-  </div>
+
   <% end  %><br>
 
 <% end  %><br>
-
+</div>
 
 <%= link_to 'Submission Form', new_submission_path(survey_id: @survey.id) %>
 <%= link_to 'Edit', edit_survey_path(@survey), remote: true %> |
