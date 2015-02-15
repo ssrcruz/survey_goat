@@ -1,22 +1,24 @@
-<p>
-  <strong>Title:</strong>
+<div class="wrapper">
+<header>
+<h1>
   <%= @survey.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
+</h1>
+<h2>
   <%= @survey.description %>
-</p>
+</h2>
+</header>
 
+<div class="copylink">Copy and paste this link:
+  https://surveygoat.herokuapp.com<%= new_submission_path(survey_id: @survey.id) %>
+</div>
 
-<p>Copy and paste this link:
-  https://surveygoat.herokuapp.com<%= new_submission_path(survey_id: @survey.id) %></p>
-
+<div class="showQuestionDiv">
 <% @survey.questions.each do |q| %>
   <h3>Question: <%= q.question_text %></h3>
   <p>Description: <%= q.description %></p>
   <% q.responses.each do |r| %>
     <p><%= r.response_text %></p>
+  </div>
   <% end  %><br>
 
 <% end  %><br>
@@ -25,3 +27,4 @@
 <%= link_to 'Submission Form', new_submission_path(survey_id: @survey.id) %>
 <%= link_to 'Edit', edit_survey_path(@survey), remote: true %> |
 <%= link_to 'Back', surveys_path %>
+</div>

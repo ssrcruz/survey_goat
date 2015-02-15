@@ -19,9 +19,10 @@
 @import 'scaffolds';
 @import 'sessions';
 @import 'authors';
+@import url('http://fonts.googleapis.com/css?family=Raleway:400');
 
 body {
-  font-family: courier;
+  font-family: 'Raleway';
 }
 
 .main-header {
