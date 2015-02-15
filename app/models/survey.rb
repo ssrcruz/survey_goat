@@ -7,10 +7,7 @@ class Survey < ActiveRecord::Base
   validates :title, presence: true
 
   accepts_nested_attributes_for :questions,
-      :allow_destroy => true,
-      :reject_if     => :all_blank
-
-  accepts_nested_attributes_for :options,
-      :allow_destroy => true,
-      :reject_if     => :all_blank
+       :allow_destroy => true,
+       :reject_if     => proc { |a| a['question_text'].blank? &&
+         a['question_type'].blank? && a['description'].blank? }
 end
