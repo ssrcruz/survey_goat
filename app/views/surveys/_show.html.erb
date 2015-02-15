@@ -5,12 +5,24 @@
 </h1>
 <h2>
   <%= @survey.description %>
+<<<<<<< HEAD
 </h2>
 </header>
 
 <div class="copylink">Copy and paste this link:
   https://surveygoat.herokuapp.com<%= new_submission_path(survey_id: @survey.id) %>
 </div>
+=======
+</p>
+
+<% if @survey.complete? %>
+  <p>Copy and paste this link: https://surveygoat.herokuapp.com
+    <%= new_submission_path(survey_id: @survey.id) %>
+  </p>
+<% else %>
+  <h3><%= "Surveys must include at least one question." %></h3>
+<% end %>
+>>>>>>> 71b6a85e5bda581f3e846deea7e40fb5b10aba95
 
 <div class="showQuestionDiv">
 <% @survey.questions.each do |q| %>

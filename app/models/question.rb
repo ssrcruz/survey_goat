@@ -3,7 +3,8 @@ class Question < ActiveRecord::Base
   has_many :options
   has_many :responses
 
-  # validates :question_text, presence: true
+  validates :question_text, presence: true
+  
   accepts_nested_attributes_for :options,
       :allow_destroy => true,
       :reject_if     => :all_blank
