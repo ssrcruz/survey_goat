@@ -12,4 +12,6 @@ var newSurvey = $("<%= escape_javascript(render(partial:"survey", locals:{survey
 $('#survey_list').prepend(newSurvey);
 newSurvey.fadeIn();
 <% end %>
+
+
 $('#main').html("<%= escape_javascript(render("show"))%>")
