@@ -28,11 +28,10 @@
         </div>
     </div>
 
-
-
   <div id="list" class="pure-u-1" id="survey_list">
     <% @surveys.each do |survey| %>
     <%= render partial: 'survey', locals:{ survey:survey } %>
+    <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' }, :method => "get", remote: true %>
     <% end %>
   </div>
 
