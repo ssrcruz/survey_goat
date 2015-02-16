@@ -34,13 +34,9 @@
         </div>
     </div>
 
-  <div id="list" class="pure-u-1" id="survey_list">
+  <div id="list" class="pure-u-1">
     <% @surveys.each do |survey| %>
     <%= render partial: 'survey', locals:{ survey:survey } %>
-      <!-- <button class="pure-button" id="deleteButton">
-        <span> Delete </span>
-        <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' }, :method => "get", remote: true %>
-      </button> -->
     <% end %>
   </div>
 

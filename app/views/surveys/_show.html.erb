@@ -12,6 +12,7 @@
   </button>
   <button class="pure-button" id="delete">
     <span> Delete </span>
+    <%= link_to 'Destroy', @survey, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
   </button>
   </div>
 

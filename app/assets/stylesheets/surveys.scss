@@ -14,15 +14,23 @@
 .survey-item.pure-g {
   position: relative;
   border-bottom: 1px solid #757575;
+  border-right: 1px solid #E0E0E0;
   max-width: 100%;
   min-height: 50px;
-  background-color: #ecf0f1;
+  background-color: #F5F5F5;
   padding-top: 3em;
 }
 
 .survey-item.pure-g:hover {
   background-color: white;
   color: white;
+}
+
+.survey-item.pure-g.active {
+  background-color: white;
+  color: white;
+  border-left: 2px solid #AED581;
+  border-right: none;
 }
 
 .pure-u-3-4 {
