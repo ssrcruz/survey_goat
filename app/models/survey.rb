@@ -1,9 +1,9 @@
 class Survey < ActiveRecord::Base
   belongs_to :author
-  has_many :questions
+  has_many :questions, dependent: :destroy
   has_many :responses, through: :questions
   has_many :options, through: :questions
-# dependant destroy - referential integrity 
+
   validates :title, presence: true
 
   accepts_nested_attributes_for :questions,
@@ -12,22 +12,9 @@ class Survey < ActiveRecord::Base
          a['question_type'].blank? && a['description'].blank? }
 
   def complete?
-    if questions.count >= 1
-      results = []
-      questions.each do |q|
-        if q.question_type == 'Choice' && q.options.count < 2
-          results << false
-        else
-          results << true
-        end
-      end
-      if results.include?(false)
-        false
-      else
-        true
-      end
-    else
-      false
+    return false if questions.blank?
+    return questions.all? do |q|
+      q.question_type != "Choice" || q.options.length > 0
     end
   end
 end
