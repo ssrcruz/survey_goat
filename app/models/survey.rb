@@ -12,12 +12,22 @@ class Survey < ActiveRecord::Base
          a['question_type'].blank? && a['description'].blank? }
 
   def complete?
-    if questions.blank?
-      false
-    elsif questions.each { |q| q.question_type == 'Choice' && q.options.count < 2 }
-      false
+    if questions.count >= 1
+      results = []
+      questions.each do |q|
+        if q.question_type == 'Choice' && q.options.count < 2
+          results << false
+        else
+          results << true
+        end
+      end
+      if results.include?(false)
+        false
+      else
+        true
+      end
     else
-      true
+      false
     end
   end
 end
