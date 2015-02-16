@@ -26,8 +26,7 @@
 
 <div class="showQuestionDiv">
 <% if @survey.complete? %>
-  <div class="copyLink">Copy and paste this link: https://surveygoat.herokuapp.com
-    <%= new_submission_path(survey_id: @survey.id) %>
+  <div class="copyLink">Copy and paste this link: https://surveygoat.herokuapp.com<%= new_submission_path(survey_id: @survey.id) %>
   </div>
 <% else %>
   <h3 class="errorMsg"><%= "Surveys must include at least one question, and multiple
