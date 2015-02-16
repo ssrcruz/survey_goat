@@ -5,7 +5,10 @@
       <a href="#" class="nav-menu-button">Menu</a>
 
         <div class="nav-inner">
-          <button class="primary-button pure-button">
+          <div class="logo">
+            <%= image_tag "empgoatwithtitle.png" %>
+          </div>
+          <button class="pure-button" id="addSurvey">
             <span>+ Add Survey </span>
             <%= link_to 'New Survey', new_survey_path, remote: true %>
           </button>
@@ -14,7 +17,10 @@
             <ul>
               <li class="userNavInfo">
                 <% if current_user %>
-                  <div class="welcome">Welcome <%= current_user.name %>.</div>
+                  <span class="welcome">
+                    <div>Welcome</div>
+                    <span class="user"><%= current_user.name %></span>
+                    </span>
                   <div class="logout">
                     <button class="pure-button">
                       <span> Logout </span>
@@ -31,7 +37,10 @@
   <div id="list" class="pure-u-1" id="survey_list">
     <% @surveys.each do |survey| %>
     <%= render partial: 'survey', locals:{ survey:survey } %>
-    <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' }, :method => "get", remote: true %>
+      <!-- <button class="pure-button" id="deleteButton">
+        <span> Delete </span>
+        <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' }, :method => "get", remote: true %>
+      </button> -->
     <% end %>
   </div>
 

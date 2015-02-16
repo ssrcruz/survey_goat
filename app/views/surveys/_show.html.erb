@@ -2,35 +2,38 @@
 <header>
 
   <div class="headerbuttons">
-  <button class="pure-button" id="show">
-    <span> Submission Form </span>
+  <button class="pure-button" id="preview">
+    <span> Preview </span>
     <%= link_to 'Submission Form', new_submission_path(survey_id: @survey.id) %>
   </button>
-  <button class="pure-button" id="show">
+  <button class="pure-button" id="edit">
     <span> Edit </span>
   <%= link_to 'Edit', edit_survey_path(@survey), remote: true %>
   </button>
+  <button class="pure-button" id="delete">
+    <span> Delete </span>
+  </button>
+  </div>
 
-<h1>
+<h1 class="surveyTitleHead">
   <%= @survey.title %>
 </h1>
 <h2>
   <%= @survey.description %>
-</h2>
+</h2 class="surveyDescHead">
 </header>
 
-</p>
-
+<div class="showQuestionDiv">
 <% if @survey.complete? %>
-  <p>Copy and paste this link: https://surveygoat.herokuapp.com
+  <div class="copyLink">Copy and paste this link: https://surveygoat.herokuapp.com
     <%= new_submission_path(survey_id: @survey.id) %>
-  </p>
+  </div>
 <% else %>
-  <h3><%= "Surveys must include at least one question, and multiple
+  <h3 class="errorMsg"><%= "Surveys must include at least one question, and multiple
       choice questions must have at least two options." %></h3>
 <% end %>
 
-<div class="showQuestionDiv">
+
 <% @survey.questions.each do |q| %>
   <h3>Question: <%= q.question_text %></h3>
   <p>Description: <%= q.description %></p>

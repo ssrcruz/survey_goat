@@ -13,5 +13,13 @@ $('#survey_list').prepend(newSurvey);
 newSurvey.fadeIn();
 <% end %>
 
+// $('.survey-item.pure-g').on('click', function() {
+//     var item = $(this);
+//
+//     if (item.hasClass('test')) {
+//       li.removeClass('test');
+//     }else {
+//       li.addClass('test');
+//     }
 
 $('#main').html("<%= escape_javascript(render("show"))%>");

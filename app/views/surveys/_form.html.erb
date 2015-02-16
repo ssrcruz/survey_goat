@@ -52,8 +52,12 @@
   <% end %>
 </template>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="actions" id="editButtons">
+    <span class="update"><%= f.submit %></span>
+    <button class="pure-button" id="cancel">
+      <span>Cancel</span>
+      <%= link_to 'Back', surveys_path %>
+    </button>
 <% end %>
+  </div>
 </div>

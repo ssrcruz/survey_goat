@@ -7,7 +7,7 @@
 }
 
 #nav {
-  background-color: #00897B;
+  background-color: #27ae60;
   font-family: 'Raleway';
 }
 
@@ -16,11 +16,18 @@
   border-bottom: 1px solid #757575;
   max-width: 100%;
   min-height: 50px;
+  background-color: #ecf0f1;
+  padding-top: 3em;
 }
 
 .survey-item.pure-g:hover {
-  background-color: #00897B;
+  background-color: white;
   color: white;
+}
+
+.pure-u-3-4 {
+  padding-left: 2em;
+  font-size: 1.1em;
 }
 
 .pure-u-3-4 a {
@@ -53,9 +60,8 @@
 }
 
 #main header {
-  background-color: #00897B;
-  padding: 2em;
-  color: white;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 .copylink {
@@ -63,7 +69,7 @@
 }
 
 .wrapper {
-  margin: 1em;
+  margin-left: 2em;
   font-family: 'Raleway';
 }
 
@@ -91,6 +97,11 @@
 .pure-button {
   position: relative;
   padding: 1em;
+  background-color: #2ecc71;
+}
+
+.pure-button:hover {
+  background-color: white;
 }
 
 .pure-button a {
@@ -105,4 +116,88 @@
 .editSurveyH1 {
   padding-left: 2em;
   font-family: 'Raleway';
+}
+
+.logo img {
+  width: 100%;
+}
+
+.errorMsg {
+  color: red;
+}
+
+.userNavInfo {
+  padding-top: 40em;
+  text-align: center;
+}
+
+.welcome {
+  line-height: 2em;
+}
+
+.user {
+  font-size: 2em;
+}
+
+#addSurvey {
+  font-size: 1.4em;
+}
+
+.headerbuttons {
+  float: right;
+  margin-top: .50em;
+}
+
+#edit, #preview, #delete, #cancel{
+  padding: 1em 3em;
+  color: white;
+  font-size: 1.1em;
+  margin-right: 1em;
+}
+
+#edit {
+  background-color: #2980b9;
+}
+
+#preview {
+  background-color: #27ae60;
+}
+
+#delete, #cancel {
+  background-color: #ecf0f1;
+  color: #e74c3c;
+}
+
+.update input {
+  font-family: 'Railway';
+  padding: 1em 3em;
+  color: white;
+  font-size: 1.1em;
+  margin-right: 1em;
+  background-color: #27ae60;
+  border: none;
+}
+
+#editButtons {
+  margin-top: 2em;
+}
+
+.surveyTitleHead {
+  font-size: 3em;
+  font-weight: 600;
+  line-height: 1em;
+}
+
+#previewWrapper {
+  width: 80%;
+  line-height: 2em;
+}
+
+.container {
+  max-width: 100%;
+  margin-left: 50%;
+}
+
+.newSub {
+  font-size: 3em;
 }
