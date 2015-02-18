@@ -17,4 +17,25 @@ class Survey < ActiveRecord::Base
       q.question_type != "Choice" || q.options.length > 0
     end
   end
+
+  # def self.names_with_titles
+  #   joins(:surveys).
+  #   select("authors.*, surveys.title AS title").
+  #   order("authors.id").
+  #   all
+  # end
+  #
+  # def self.with_survey_title
+  #   joins("LEFT JOIN surveys ON authors.id = surveys.author_id").
+  #   select("authors.*, surveys.title AS survey_title").
+  #   order(:id).all
+  # end
+  #
+  # def self.without_any_surveys
+  #   joins("LEFT JOIN surveys ON authors.id = surveys.author_id").
+  #   order(:id).where("surveys.id IS NULL").all
+  # end
+
+  def self.all_with_author_emails
+    self.joins("LEFT JOIN authors ON surveys.author_id=author.id").select("title, email AS author_email")
 end
