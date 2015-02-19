@@ -38,4 +38,5 @@ class Survey < ActiveRecord::Base
 
   def self.all_with_author_emails
     self.joins("LEFT JOIN authors ON surveys.author_id=author.id").select("title, email AS author_email")
+  end
 end
